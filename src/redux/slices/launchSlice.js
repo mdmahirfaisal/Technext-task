@@ -1,34 +1,48 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-export const getUser = createAsyncThunk("user/getUser", async (id) => {
-  const res = await fetch(`https://reqres.in/api/users/${id}`)
-  const data = await res.json()
-  return data.data;
-})
+export const fetchLaunchData = createAsyncThunk(
+  "launch/fetchLaunchData", async () => {
+    const res = await fetch(`https://api.spacexdata.com/v3/launches`)
+      .then(res => res.json())
+    return res;
+  })
 
 const launchSlice = createSlice({
   name: "launch",
   initialState: {
-    user: {},
+    launchAllData: [],
     loading: false,
     error: null
   },
 
   extraReducers: {
-    [getUser.pending]: (state, action) => {
+    [fetchLaunchData.pending]: (state, action) => {
       state.loading = true
     },
-    [getUser.fulfilled]: (state, action) => {
+    [fetchLaunchData.fulfilled]: (state, action) => {
       state.loading = false
-      state.user = action.payload
+      state.launchAllData = action.payload
+      console.log(state.launchAllData)
     },
-    [getUser.rejected]: (state, action) => {
+    [fetchLaunchData.rejected]: (state, action) => {
       state.loading = false
       state.error = action.payload
     },
-
-
   }
+  // extraReducers: (builder) => {
+
+  //   builder.addCase(fetchLaunchData.pending, (state, action) => {
+  //     state.launchAllData.push(action.payload)
+  //   })
+
+  //   builder.addCase(fetchLaunchData.fulfilled, (state, action) => {
+  //     state.launchAllData.push(action.payload)
+  //   })
+
+  //   builder.addCase(fetchLaunchData.rejected, (state, action) => {
+  //     state.launchAllData.push(action.payload)
+  //   })
+  // },
 });
 
 export default launchSlice.reducer;
