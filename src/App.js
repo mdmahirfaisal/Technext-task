@@ -1,8 +1,7 @@
 import './App.css';
-import { Routes, Route } from "react-router-dom";
 import Home from './pages/home';
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
+import { Routes, Route } from "react-router-dom";
+import { useDispatch } from 'react-redux';
 import { fetchLaunchData } from './redux/slices/launchSlice';
 
 

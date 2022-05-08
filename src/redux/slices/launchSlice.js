@@ -22,27 +22,13 @@ const launchSlice = createSlice({
     [fetchLaunchData.fulfilled]: (state, action) => {
       state.loading = false
       state.launchAllData = action.payload
-      console.log(state.launchAllData)
+      // console.log(state.launchAllData)
     },
     [fetchLaunchData.rejected]: (state, action) => {
       state.loading = false
       state.error = action.payload
     },
   }
-  // extraReducers: (builder) => {
-
-  //   builder.addCase(fetchLaunchData.pending, (state, action) => {
-  //     state.launchAllData.push(action.payload)
-  //   })
-
-  //   builder.addCase(fetchLaunchData.fulfilled, (state, action) => {
-  //     state.launchAllData.push(action.payload)
-  //   })
-
-  //   builder.addCase(fetchLaunchData.rejected, (state, action) => {
-  //     state.launchAllData.push(action.payload)
-  //   })
-  // },
 });
 
 export default launchSlice.reducer;
