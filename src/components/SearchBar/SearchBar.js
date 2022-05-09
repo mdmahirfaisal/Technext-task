@@ -1,26 +1,26 @@
 import * as React from 'react';
 import OutlinedInput from '@mui/material/OutlinedInput';
-import InputLabel from '@mui/material/InputLabel';
 import InputAdornment from '@mui/material/InputAdornment';
 import FormControl from '@mui/material/FormControl';
 import SearchIcon from '@mui/icons-material/Search';
+import { useDispatch } from 'react-redux';
+import { handleSearchByRocket } from '../../redux/slices/launchSlice';
 
-const SearchBar = ({ setSearchText }) => {
+const SearchBar = () => {
+    const dispatch = useDispatch();
 
     return (
-        <div className='w-[300px] sm:w-[60%] mx-auto mt-10' >
+        <div className='w-[280px] sm:w-[60%] mx-auto mt-10' >
             <FormControl fullWidth sx={{ m: 1 }}>
-                <InputLabel htmlFor="outlined-adornment-amount">Search by rocket name</InputLabel>
+                <p className='text-xl mb-3 font-semibold text-gray-500'>Search data by rocket id, name or type</p>
                 <OutlinedInput
-                    placeholder='Search by rocket name...'
+                    placeholder='Search by rocket id, name or type...'
                     name='search'
                     type='text'
-                    onChange={(e) => setSearchText(e.target.value)}
+                    onChange={(e) => dispatch(handleSearchByRocket(e.target.value))}
                     startAdornment={<InputAdornment position="start"><SearchIcon fontSize='large' /></InputAdornment>}
-                    label="Search by rocket name"
                 />
             </FormControl>
-            {/* <input type="text" placeholder='search' name='search' onChange={handleSearch} /> */}
         </div>
     );
 }
