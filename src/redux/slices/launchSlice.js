@@ -23,7 +23,6 @@ const launchSlice = createSlice({
     /// filter search Reducer ///
     handleSearchByRocket: (state, { payload }) => {
       state.displayFilterData = state.launchAllData.filter(launch => (launch.rocket.rocket_id || launch.rocket.rocket_name || launch.rocket.rocket_type).toLowerCase().includes(payload.toLowerCase()))
-      console.log(state.displayFilterData)
     },
 
     /// filter success Status Reducer ///
@@ -34,7 +33,6 @@ const launchSlice = createSlice({
       } else {
         newData = (state.displayFilterData.length === true || state.launchAllData)?.filter(launch => launch.launch_success === payload)
       }
-      console.log(newData);
       state.displayFilterData = newData;
     },
 
@@ -47,7 +45,6 @@ const launchSlice = createSlice({
         newData = (state.displayFilterData.length === true || state.launchAllData)?.filter(launch => launch.upcoming === payload)
       }
       state.displayFilterData = newData;
-      console.log(newData);
     },
 
     /// Filter Date Reducer ///
@@ -116,7 +113,6 @@ const launchSlice = createSlice({
     [fetchLaunchData.fulfilled]: (state, action) => {
       state.loading = false
       state.launchAllData = action.payload
-      // console.log(state.launchAllData)
     },
     [fetchLaunchData.rejected]: (state, action) => {
       state.loading = false

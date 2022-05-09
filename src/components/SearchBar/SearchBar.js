@@ -12,7 +12,7 @@ const SearchBar = () => {
     return (
         <div className='w-[280px] sm:w-[60%] mx-auto mt-10' >
             <FormControl fullWidth sx={{ m: 1 }}>
-                <p className='text-xl mb-3 font-semibold text-gray-500'>Search data by rocket id, name or type</p>
+                <p className='text-xl mb-3 font-semibold text-gray-500'>Search data by rocket id, name or type. like: falcon1 or falcon9</p>
                 <OutlinedInput
                     placeholder='Search by rocket id, name or type...'
                     name='search'

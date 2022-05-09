@@ -15,7 +15,7 @@ const IsUpcomingFilter = () => {
     };
 
     return (
-        <div className='mx-auto sm:mx-0 sm:mr-5'>
+        <div className='mx-auto sm:mx-0 sm:mr-5 mt-3 sm:mt-0'>
             <FormControl fullWidth>
                 <InputLabel id="upcomingStatus">Upcoming Status</InputLabel>
                 <Select sx={{ width: '200px' }}

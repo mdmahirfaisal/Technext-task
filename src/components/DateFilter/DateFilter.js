@@ -13,7 +13,7 @@ const DateFilter = () => {
         dispatch(filterLastTimeData(e.target.value));
     }
     return (
-        <div className='mx-auto sm:mx-0'>
+        <div className='mx-auto sm:mx-0 mt-3 sm:mt-0'>
             <FormControl fullWidth>
                 <InputLabel id="filter-date">Filter by date</InputLabel>
                 <Select sx={{ width: '200px' }}

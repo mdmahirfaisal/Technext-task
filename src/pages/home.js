@@ -28,7 +28,8 @@ const Index = () => {
             <NavigationBar />
             <SearchBar />
 
-            <p className='text-xl my-3 font-semibold text-gray-500'>Filter Data By Launch Status, Upcoming Status and Date</p>
+            {displayFilterData.length ? <p className='text-xl my-3 font-semibold text-gray-500'>Filter Data By Launch Status, Upcoming Status and Date</p> :
+                <p className='text-2xl md:text-3 my-3 font-semibold text-red-500'>Filter data not available please search or filter another option</p>}
             <div className='flex flex-wrap mt-2 sm:items-center w-[98%] sm:w-[96%] mx-auto'>
                 <LaunchStatusFilter />
                 <IsUpcomingFilter />
