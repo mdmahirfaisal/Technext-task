@@ -8,6 +8,9 @@ import InputLabel from '@mui/material/InputLabel';
 import InputAdornment from '@mui/material/InputAdornment';
 import FormControl from '@mui/material/FormControl';
 import SearchIcon from '@mui/icons-material/Search';
+import Select from '@mui/material/Select';
+import { MenuItem } from '@mui/material';
+
 
 const Index = () => {
     React.useEffect(() => {
@@ -15,6 +18,7 @@ const Index = () => {
     }, [])
     const { launchAllData, loading } = useSelector(state => state.launch);
     const [matchedData, setMatchedData] = React.useState(launchAllData)
+    const [launchStatus, setLaunchStatus] = React.useState("")
 
     //search functionality
     const handleSearch = (e) => {
@@ -23,9 +27,27 @@ const Index = () => {
             let searchText = e.target.value;
             newData = launchAllData?.filter(launch => (launch.rocket.rocket_id || launch.rocket.rocket_name || launch.rocket.rocket_type).toLowerCase().includes(searchText.toLowerCase()))
             setMatchedData(newData);
-            console.log(newData);
         }
-    }
+    };
+
+    // Filter functionality
+    const handleLaunchStatus = (e) => {
+        setLaunchStatus(e.target.value)
+        let newData = null;
+        let selectField = e.target.value;
+        if (selectField) {
+            newData = (matchedData.length === true || launchAllData)?.filter(launch => launch.launch_success === selectField)
+        } else {
+            newData = (matchedData.length === true || launchAllData)?.filter(launch => launch.launch_success === selectField)
+        }
+        setMatchedData(newData)
+        console.log(newData);
+    };
+
+
+
+    // end filer functionality
+
     let displayData = null;
     if (matchedData.length) {
         displayData = matchedData;
@@ -38,7 +60,6 @@ const Index = () => {
             <NavigationBar />
 
             {/* --- search field --- */}
-
             <div className='w-[300px] sm:w-[60%] mx-auto mt-10' >
                 <FormControl fullWidth sx={{ m: 1 }}>
                     <InputLabel htmlFor="outlined-adornment-amount">Search by rocket id, name or type</InputLabel>
@@ -52,6 +73,24 @@ const Index = () => {
                     />
                 </FormControl>
             </div>
+
+            {/* --- filter field --- */}
+            <div className='flex mt-2'>
+                <div>
+                    <InputLabel id="demo-simple-select-label">Launch Status</InputLabel>
+                    <Select sx={{ width: '200px' }}
+                        labelId="demo-simple-select-label"
+                        id="demo-simple-select"
+                        placeholder='Status'
+                        value={launchStatus}
+                        onChange={handleLaunchStatus}
+                    >
+                        <MenuItem value={true}>Success</MenuItem>
+                        <MenuItem value={false}>Failure</MenuItem>
+                    </Select>
+                </div>
+            </div>
+
             <Home displayData={displayData} loading={loading} />
         </div>
     );

@@ -29,9 +29,6 @@ const ExpandMore = styled((props) => {
 const DisplayAllData = ({ launch }) => {
     const { details, links, rocket, flight_number, launch_date_local, launch_date_unix, launch_failure_details, launch_site, launch_success, launch_year, video_link, mission_name, static_fire_date_unix, upcoming, tentative_max_precision, reddit_campaign, } = launch;
 
-    const externalLinkOpen = (link) => {
-        console.log(link)
-    }
 
     // expand control
     const [expanded, setExpanded] = React.useState(false);
