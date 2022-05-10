@@ -33,8 +33,8 @@ const Index = () => {
                     <IsUpcomingFilter />
                     <DateFilter />
                 </div>
-                {displayFilterData.length ? <p className='text-xl my-3 font-semibold text-gray-500'>Now Displayed Filtered Data </p> :
-                    <p className='text-2xl md:text-3 my-3 font-semibold text-red-500'>Filter data not available please search or filter another option</p>}
+                {displayFilterData.length ? <p className='text-xl my-3 font-semibold text-gray-100'>Now Displayed Filtered Data </p> :
+                    <p className='text-2xl md:text-3 my-3 font-semibold text-red-600'>Filter data not available please search or filter another option</p>}
 
                 <Home displayData={displayData} loading={loading} />
             </div>
