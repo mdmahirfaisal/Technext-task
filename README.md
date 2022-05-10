@@ -33,4 +33,6 @@ I've used Jest to test the application. We need some other packages to work with
 
 + 1 step: I have created a new repository and connected my react application.
 
++ 2 step: After that, I have go to Vercel and clicking on New Project and connect with the repository of the project
+
 + 3 step: The Vercel application then automatically builds the project and completes the deployment.

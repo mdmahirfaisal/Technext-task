@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matchs Home snapshot 1`] = `
+<div
+  data-testid="myhomediv"
+>
+  <button>
+    test button
+  </button>
+  <div
+    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 sm:gap-3 my-12"
+  />
+</div>
+`;

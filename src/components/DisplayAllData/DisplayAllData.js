@@ -12,7 +12,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import ArticleIcon from '@mui/icons-material/Article';
-import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
+import LinkIcon from '@mui/icons-material/Link';
 
 
 const ExpandMore = styled((props) => {
@@ -29,7 +29,6 @@ const ExpandMore = styled((props) => {
 const DisplayAllData = ({ launch }) => {
     const { details, links, rocket, flight_number, launch_date_local, launch_date_unix, launch_failure_details, launch_site, launch_success, launch_year, video_link, mission_name, static_fire_date_unix, upcoming, tentative_max_precision, reddit_campaign, } = launch;
 
-
     // expand control
     const [expanded, setExpanded] = React.useState(false);
     const handleExpandClick = () => {
@@ -38,10 +37,11 @@ const DisplayAllData = ({ launch }) => {
 
     return (
         <Card >
+
             <CardHeader sx={{ textAlign: 'start' }}
                 avatar={
                     <Avatar aria-label="recipe">
-                        <img className='mx-auto' src={links?.flickr_images[0] || links?.mission_patch_small} alt="Avatar" />
+                        <img className='mx-auto' src={links?.mission_patch_small} alt="Avatar" />
                     </Avatar>
                 }
                 action={
@@ -52,7 +52,7 @@ const DisplayAllData = ({ launch }) => {
                 title={mission_name}
                 subheader={launch_date_local}
             />
-            <img className='h-[150px] md:h-[200px] mx-auto' src={links?.mission_patch} alt="Mission img" />
+            <img className='h-[200px] md:h-[250px] mx-auto' src={links?.flickr_images.length ? links?.flickr_images[0] : links?.mission_patch_small} alt="Mission img" />
             <CardContent sx={{ textAlign: 'start' }}>
                 <Typography variant="body2">
                     <span className='font-bold'>Rocket: </span> {rocket?.rocket_name || "Rocket name is missing"}
@@ -72,7 +72,7 @@ const DisplayAllData = ({ launch }) => {
                     </IconButton></a>
                 <a href={links?.reddit_launch} target="_blank" rel="noopener noreferrer">
                     <IconButton  >
-                        <RocketLaunchIcon />
+                        <LinkIcon />
                     </IconButton></a>
                 <a href={links?.video_link} target="_blank" rel="noopener noreferrer">
                     <IconButton  >
@@ -89,11 +89,11 @@ const DisplayAllData = ({ launch }) => {
                 </ExpandMore>
             </CardActions>
 
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
+            <Collapse in={expanded} timeout="auto" unmountOnExit className=''>
                 <CardContent sx={{ textAlign: 'start' }}>
 
                     <Typography paragraph color="text.secondary">
-                        <span className='font-bold'>Details: </span> {details || "No Details Available"}
+                        <span className='font-bold'>Details: </span> {details ? details.slice(0, 150) : "No Details Available"}
                     </Typography>
 
                 </CardContent>

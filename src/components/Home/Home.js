@@ -5,7 +5,7 @@ import DisplayAllData from '../DisplayAllData/DisplayAllData';
 const Home = ({ displayData, loading }) => {
 
     return (
-        <div>
+        <div data-testid="myhomediv">
             {loading ?
                 <h1 className='mt-12 font-bold'><CircularProgress /> </h1>
                 :
