@@ -28,13 +28,13 @@ const Index = () => {
             <NavigationBar />
             <div className="mx-auto w-[98%] sm:max-w-[1200px]">
                 <SearchBar />
-                {displayFilterData.length ? <p className='text-xl my-3 font-semibold text-gray-500'>Now Displayed Filtered Data </p> :
-                    <p className='text-2xl md:text-3 my-3 font-semibold text-red-500'>Filter data not available please search or filter another option</p>}
-                <div className='flex flex-wrap mt-2 sm:items-center justify-center w-[98%] sm:max-w-[1200px] mx-auto'>
+                <div className='flex flex-wrap mt-2 items-center justify-center w-[98%] mx-auto'>
                     <LaunchStatusFilter />
                     <IsUpcomingFilter />
                     <DateFilter />
                 </div>
+                {displayFilterData.length ? <p className='text-xl my-3 font-semibold text-gray-500'>Now Displayed Filtered Data </p> :
+                    <p className='text-2xl md:text-3 my-3 font-semibold text-red-500'>Filter data not available please search or filter another option</p>}
 
                 <Home displayData={displayData} loading={loading} />
             </div>

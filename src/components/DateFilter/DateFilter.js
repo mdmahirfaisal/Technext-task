@@ -16,7 +16,7 @@ const DateFilter = () => {
         <div className='mx-auto sm:mx-0 mt-3 sm:mt-0'>
             <FormControl fullWidth>
                 <InputLabel id="filter-date">Filter by date</InputLabel>
-                <Select sx={{ width: '200px' }}
+                <Select sx={{ width: '200px', bgcolor: 'white', borderRadius: 2 }}
                     labelId="filter-date"
                     label="Filter by date"
                     id="demo-simple-select"

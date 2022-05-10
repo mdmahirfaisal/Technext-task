@@ -10,15 +10,14 @@ const SearchBar = () => {
     const dispatch = useDispatch();
 
     return (
-        <div className='w-[280px] sm:w-[60%] mx-auto mt-10' >
-            <FormControl fullWidth sx={{ m: 1 }}>
-                <p className='text-xl mb-3 font-semibold text-gray-500'>Search data by rocket id, name or type. like: falcon1 or falcon9</p>
-                <OutlinedInput
-                    placeholder='Search by rocket id, name or type...'
+        <div className='w-[98%] md:w-[90%] mx-auto mt-10' >
+            <FormControl fullWidth>
+                <OutlinedInput sx={{ bgcolor: 'white', borderRadius: 2 }}
+                    placeholder='Search by rocket name...'
                     name='search'
                     type='text'
                     onChange={(e) => dispatch(handleSearchByRocket(e.target.value))}
-                    startAdornment={<InputAdornment position="start"><SearchIcon fontSize='large' /></InputAdornment>}
+                    startAdornment={<InputAdornment position="start"><SearchIcon sx={{ color: '#fc5c65' }} fontSize='large' /></InputAdornment>}
                 />
             </FormControl>
         </div>

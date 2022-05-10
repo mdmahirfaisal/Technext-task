@@ -11,7 +11,7 @@ import AdbIcon from '@mui/icons-material/Adb';
 const NavigationBar = () => {
 
     return (
-        <AppBar position="sticky" sx={{ backgroundColor: '#ff0000' }}>
+        <AppBar position="sticky" sx={{ bgcolor: '#fc5c65' }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -63,7 +63,9 @@ const NavigationBar = () => {
                     >
                         TECHNEXT
                     </Typography>
+                    <p className='mx-auto text-xl mb-3 font-semibold text-gray-50'>Search data by rocket name like: falcon 1 or falcon 9</p>
                 </Toolbar>
+
             </Container>
         </AppBar>
     );

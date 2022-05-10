@@ -9,7 +9,7 @@ const Home = ({ displayData, loading }) => {
             {loading ?
                 <h1 className='mt-12 font-bold'><CircularProgress /> </h1>
                 :
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 sm:gap-3 my-12">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 lg:gap-5 my-12">
 
                     {displayData?.map((launch, index) => <DisplayAllData
                         key={index}

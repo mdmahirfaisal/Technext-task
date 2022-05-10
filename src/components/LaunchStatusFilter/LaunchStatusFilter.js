@@ -13,10 +13,10 @@ const LaunchStatusFilter = () => {
     }
 
     return (
-        <div className='mx-auto sm:mx-0 sm:mr-5 mt-3 sm:mt-0'>
+        <div className='mx-auto sm:mx-0 sm:mr-5 mt-3 sm:mt-0 '>
             <FormControl fullWidth>
                 <InputLabel id="launchStatus">Launch Status</InputLabel>
-                <Select sx={{ width: '200px' }}
+                <Select sx={{ width: '200px', bgcolor: 'white', borderRadius: 2 }}
                     labelId="launchStatus"
                     label="Launch Status"
                     id="demo-simple-select"
