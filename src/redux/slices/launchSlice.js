@@ -22,7 +22,7 @@ const launchSlice = createSlice({
 
     /// filter search Reducer ///
     handleSearchByRocket: (state, { payload }) => {
-      state.displayFilterData = state.launchAllData.filter(launch => (launch.rocket.rocket_id || launch.rocket.rocket_name || launch.rocket.rocket_type).toLowerCase().includes(payload.toLowerCase()))
+      state.displayFilterData = state.launchAllData.filter(launch => (launch.rocket.rocket_name || launch.rocket.rocket_id || launch.rocket.rocket_type).toLowerCase().includes(payload.toLowerCase()))
     },
 
     /// filter success Status Reducer ///

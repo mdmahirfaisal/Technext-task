@@ -37,11 +37,11 @@ const DisplayAllData = ({ launch }) => {
     };
 
     return (
-        <Card>
+        <Card >
             <CardHeader sx={{ textAlign: 'start' }}
                 avatar={
                     <Avatar aria-label="recipe">
-                        <img className='mx-auto' src={links?.mission_patch_small} alt="Avatar" />
+                        <img className='mx-auto' src={links?.flickr_images[0] || links?.mission_patch_small} alt="Avatar" />
                     </Avatar>
                 }
                 action={
