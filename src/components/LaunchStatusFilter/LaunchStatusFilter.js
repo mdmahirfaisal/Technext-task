@@ -16,7 +16,7 @@ const LaunchStatusFilter = () => {
         <div className='mx-auto sm:mx-0 sm:mr-5 mt-3 sm:mt-0 '>
             <FormControl fullWidth>
                 <InputLabel id="launchStatus">Launch Status</InputLabel>
-                <Select sx={{ width: '200px', bgcolor: 'white', borderRadius: 2 }}
+                <Select sx={{ width: '200px', backgroundColor: 'white', borderRadius: 2 }}
                     labelId="launchStatus"
                     label="Launch Status"
                     id="demo-simple-select"

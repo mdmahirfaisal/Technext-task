@@ -1,6 +1,6 @@
+import { CircularProgress } from '@mui/material';
 import React from 'react';
 import DisplayAllData from '../DisplayAllData/DisplayAllData';
-import { CircularProgress } from '@mui/material';
 
 const Home = ({ displayData, loading }) => {
 

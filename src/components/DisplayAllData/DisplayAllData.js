@@ -13,7 +13,6 @@ import { styled } from '@mui/material/styles';
 import React from 'react';
 
 
-
 const ExpandMore = styled((props) => {
     const { expand, ...other } = props;
     return <IconButton {...other} />;
@@ -56,7 +55,7 @@ const DisplayAllData = ({ launch }) => {
                     <div className='mt-2'>
                         <p> <span className='font-medium text-red-600'>Flight number: </span> {launch?.flight_number}</p>
 
-                        <p> <span className='font-medium text-red-600'>Launch year: </span> {launch?.launch_year}</p>
+                        <p><span className='font-medium text-red-600'>Launch year: </span> {launch?.launch_year}</p>
 
                         <p>  <span className='font-medium text-red-600'>Nationality: </span>{launch?.rocket?.second_stage?.payloads[0]?.nationality}</p>
 

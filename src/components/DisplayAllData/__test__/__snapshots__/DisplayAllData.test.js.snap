@@ -2,10 +2,10 @@
 
 exports[`matches display all data snapshot 1`] = `
 <div
-  className="rounded-tl-[70px] rounded-br-[70px] bg-white py-10"
+  className="rounded-tl-[70px] rounded-br-[60px] bg-white"
 >
   <button
-    className="MuiButtonBase-root MuiCardActionArea-root css-b6lsxj-MuiButtonBase-root-MuiCardActionArea-root"
+    className="MuiButtonBase-root MuiCardActionArea-root css-119ytgs-MuiButtonBase-root-MuiCardActionArea-root"
     disabled={false}
     onBlur={[Function]}
     onContextMenu={[Function]}
@@ -78,7 +78,6 @@ exports[`matches display all data snapshot 1`] = `
            
         </p>
         <p>
-           
           <span
             className="font-medium text-red-600"
           >
@@ -118,7 +117,7 @@ exports[`matches display all data snapshot 1`] = `
     />
   </button>
   <div
-    className="MuiCardActions-root MuiCardActions-spacing css-1t6e9jv-MuiCardActions-root"
+    className="MuiCardActions-root MuiCardActions-spacing css-16ntmvy-MuiCardActions-root"
   >
     <a
       rel="noopener noreferrer"
