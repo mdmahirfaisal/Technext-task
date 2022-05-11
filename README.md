@@ -22,11 +22,11 @@
 
 #### `eslint`
 
-+ I have set up eslint and have installed: eslint-config-airbnb, eslint-config-prettier,  eslint-plugin-import,  eslint-plugin-jsx-a11y, eslint-plugin-react-hooks, eslint-plugin-react.
++ I have set up eslint and have installed: babel-eslint, eslint, eslint-config-airbnb, eslint-config-prettier, eslint-config-react-app,eslint-plugin-eslint-plugin,eslint-plugin-prettier, eslint-plugin-react
 
-<!-- #### `Jest`
+#### `Jest`
 
-I've used Jest to test the application. We need some other packages to work with Jest. That's why @testing-library/react, jest-dom, and react-test-renderer are installed here. -->
+I've used Jest to test the application.And I have completed unit tests of all components and home page of this project. I have installed one more package to complete the unit test. react-test-renderer
 
 ## Deploy Process
 + I have deployed this project to Vercel.

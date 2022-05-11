@@ -26,7 +26,6 @@ const ExpandMore = styled((props) => {
 }));
 
 const DisplayAllData = ({ launch }) => {
-    const { details, links, rocket, flight_number, launch_date_local, launch_site, launch_success, launch_year, mission_name, } = launch;
 
     // expand control
     const [expanded, setExpanded] = React.useState(false);
@@ -40,30 +39,30 @@ const DisplayAllData = ({ launch }) => {
                 <CardHeader sx={{ textAlign: 'start' }}
                     avatar={
                         <Avatar aria-label="recipe">
-                            <img className='mx-auto' src={links?.mission_patch_small} alt="Avatar" />
+                            <img className='mx-auto' src={launch?.links?.mission_patch_small} alt="Avatar" />
                         </Avatar>
                     }
-                    title={mission_name}
-                    subheader={`${"Launch Date: "} ${launch_date_local.split('T')[0]}`}
+                    title={launch?.mission_name}
+                    subheader={`${"Launch Date: "} ${launch?.launch_date_local.split('T')[0]}`}
 
                 />
-                <img className='h-[200px] md:h-[250px] mx-auto' src={links?.flickr_images.length ? links?.flickr_images[0] : links?.mission_patch} alt="Mission img" />
+                <img className='h-[200px] md:h-[250px] mx-auto' src={launch?.links?.flickr_images.length ? launch?.links?.flickr_images[0] : launch?.links?.mission_patch} alt="Mission img" />
 
                 <CardContent sx={{ textAlign: 'start', bgcolor: 'black', mt: 3, paddingBottom: 4, color: '#f1f2f6', position: 'relative' }}>
 
-                    <h2 className='text-xl md:text-2xl font-medium md:font-semibold '>{rocket?.rocket_name || "Rocket name is not available"}</h2>
-                    <p className='absolute right-5 top-5 text-lg'>{launch_success ? "Success" : "Failure"}</p>
+                    <h2 className='text-xl md:text-2xl font-medium md:font-semibold '>{launch?.rocket?.rocket_name || "Rocket name is not available"}</h2>
+                    <p className='absolute right-5 top-5 text-lg'>{launch?.launch_success ? "Success" : "Failure"}</p>
 
                     <div className='mt-2'>
-                        <p> <span className='font-medium text-red-600'>Flight number: </span> {flight_number}</p>
+                        <p> <span className='font-medium text-red-600'>Flight number: </span> {launch?.flight_number}</p>
 
-                        <p> <span className='font-medium text-red-600'>Launch year: </span> {launch_year}</p>
+                        <p> <span className='font-medium text-red-600'>Launch year: </span> {launch?.launch_year}</p>
 
-                        <p>  <span className='font-medium text-red-600'>Nationality: </span>{rocket?.second_stage?.payloads[0]?.nationality}</p>
+                        <p>  <span className='font-medium text-red-600'>Nationality: </span>{launch?.rocket?.second_stage?.payloads[0]?.nationality}</p>
 
-                        <p><span className='font-medium text-red-600'>Site name: </span> {launch_site?.site_name || "No Details Available"}</p>
+                        <p><span className='font-medium text-red-600'>Site name: </span> {launch?.launch_site?.site_name || "No Details Available"}</p>
 
-                        <p> <span className='font-medium text-red-600'>Landing vehicle: </span>{rocket?.first_stage?.cores[0]?.landing_vehicle}</p>
+                        <p> <span className='font-medium text-red-600'>Landing vehicle: </span>{launch?.rocket?.first_stage?.cores[0]?.landing_vehicle}</p>
 
                     </div>
                 </CardContent>
@@ -71,15 +70,15 @@ const DisplayAllData = ({ launch }) => {
 
             {/* ---- External Links ---- */}
             <CardActions >
-                <a href={links?.article_link} target="_blank" rel="noopener noreferrer">
+                <a href={launch?.links?.article_link} target="_blank" rel="noopener noreferrer">
                     <IconButton  >
                         <ArticleIcon sx={{ color: "green" }} />
                     </IconButton></a>
-                <a href={links?.reddit_launch} target="_blank" rel="noopener noreferrer">
+                <a href={launch?.links?.reddit_launch} target="_blank" rel="noopener noreferrer">
                     <IconButton  >
                         <LinkIcon sx={{ color: "blue" }} />
                     </IconButton></a>
-                <a href={links?.video_link} target="_blank" rel="noopener noreferrer">
+                <a href={launch?.links?.video_link} target="_blank" rel="noopener noreferrer">
                     <IconButton  >
                         <YouTubeIcon sx={{ color: "red" }} />
                     </IconButton></a>
@@ -98,7 +97,7 @@ const DisplayAllData = ({ launch }) => {
                 <CardContent sx={{ textAlign: 'start' }}>
                     <p>
                         <span className='font-medium'>Details: </span>
-                        {details ? details.slice(0, 150) : "No Details Available"}</p>
+                        {launch?.details ? launch?.details.slice(0, 150) : "No Details Available"}</p>
 
                 </CardContent>
             </Collapse>

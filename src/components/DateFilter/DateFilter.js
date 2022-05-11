@@ -3,7 +3,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { filterLastTimeData } from '../../redux/slices/launchSlice';
 
-const DateFilter = ({ label }) => {
+const DateFilter = () => {
     const dispatch = useDispatch();
     const [filterDate, setFilterDate] = React.useState("")
 
@@ -13,7 +13,7 @@ const DateFilter = ({ label }) => {
         dispatch(filterLastTimeData(e.target.value));
     }
     return (
-        <div data-testid="datefilter" className='mx-auto sm:mx-0 mt-3 sm:mt-0'>
+        <div className='mx-auto sm:mx-0 mt-3 sm:mt-0'>
             <FormControl fullWidth>
                 <InputLabel id="filter-date">Filter by date</InputLabel>
                 <Select sx={{ width: '200px', bgcolor: 'white', borderRadius: 2 }}
