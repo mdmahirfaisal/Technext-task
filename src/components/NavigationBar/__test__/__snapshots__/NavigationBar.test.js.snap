@@ -25,7 +25,7 @@ exports[`matches navigation bar snapshot 1`] = `
         className="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap css-m5x0z-MuiTypography-root"
         href="/"
       >
-        TECHNEXT
+        TECH NEXT
       </a>
       <div
         className="MuiBox-root css-1lvtzne"

@@ -11,7 +11,7 @@ import * as React from 'react';
 const NavigationBar = () => {
 
     return (
-        <AppBar position="sticky" sx={{ bgcolor: '#fc5c65' }}>
+        <AppBar position="sticky" sx={{ backgroundColor: '#fc5c65' }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -30,7 +30,7 @@ const NavigationBar = () => {
                             textDecoration: 'none',
                         }}
                     >
-                        TECHNEXT
+                        TECH NEXT
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
