@@ -1,16 +1,16 @@
-import * as React from 'react';
-import { styled } from '@mui/material/styles';
-import CardHeader from '@mui/material/CardHeader';
-import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
-import Collapse from '@mui/material/Collapse';
-import Avatar from '@mui/material/Avatar';
-import IconButton from '@mui/material/IconButton';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import YouTubeIcon from '@mui/icons-material/YouTube';
 import ArticleIcon from '@mui/icons-material/Article';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import LinkIcon from '@mui/icons-material/Link';
+import YouTubeIcon from '@mui/icons-material/YouTube';
 import { CardActionArea } from '@mui/material';
+import Avatar from '@mui/material/Avatar';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardHeader from '@mui/material/CardHeader';
+import Collapse from '@mui/material/Collapse';
+import IconButton from '@mui/material/IconButton';
+import { styled } from '@mui/material/styles';
+import React from 'react';
 
 
 
@@ -34,8 +34,8 @@ const DisplayAllData = ({ launch }) => {
     };
 
     return (
-        <div className='rounded-tl-[70px] rounded-br-[70px] bg-white py-10' >
-            <CardActionArea>
+        <div className='rounded-tl-[70px] rounded-br-[60px] bg-white' >
+            <CardActionArea sx={{ paddingTop: 3 }}>
                 <CardHeader sx={{ textAlign: 'start' }}
                     avatar={
                         <Avatar aria-label="recipe">
@@ -69,7 +69,7 @@ const DisplayAllData = ({ launch }) => {
             </CardActionArea>
 
             {/* ---- External Links ---- */}
-            <CardActions >
+            <CardActions sx={{ pb: 2 }} >
                 <a href={launch?.links?.article_link} target="_blank" rel="noopener noreferrer">
                     <IconButton  >
                         <ArticleIcon sx={{ color: "green" }} />
